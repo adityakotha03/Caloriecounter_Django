@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+{%block title%}Home{%endblock title%}
+{%block body%}
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/static/1.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Food Facts</h5>
+        <p>The strawberry is the only agricultural product that bears its seeds on the outside.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Food Facts</h5>
+        <p>Ketchup was once believed to have medicinal qualities that could cure, among other ailments, diarrhea.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/3.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Food Facts</h5>
+        <p>One burger patty can contain hundreds of different cows.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">Get Started</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Counting calories can help you lose weight by giving you an overview of what you eat each day. This can help you identify eating patterns to modify, keeping you on track to reach your goals.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/login" role="button">Calorie Counter</a>
+      </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+    </div>
+  </div>
+{%endblock body%}
