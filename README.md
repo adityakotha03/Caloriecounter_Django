@@ -1,1 +1,1 @@
-# Caloriecounter_Django
+# Calorie Couner - Health care website
