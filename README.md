@@ -11,6 +11,17 @@ The main objective of the website is to check and display the calorie consumptio
 - [x] Bootstrap 
 - [x] Django framework
 
+## Activation
+1. Activate your virtual environment
+2. cd to the directory where requirements.txt is located
+3. Installing Requirements
+```bash
+pip install -r requirements.txt
+``` 
+4. Running the server
+```bash
+python manage.py runserver
+``` 
 ## WEB PAGE:
 ### 1) HOME PAGE : This is our index page it gives about a basic idea about why should we set calorie limit and some foood facts
 
@@ -89,9 +100,7 @@ The main objective of the website is to check and display the calorie consumptio
 
 
 
-```bash
-python manage.py runserver
-``` 
+
 ## 6) we introduced a new feature BMR ratio so user can modify food consumption and we also gave a brief idea about BMR ratio
 
 
@@ -107,13 +116,13 @@ python manage.py runserver
 
 ## This  calorie counter is the best website for a user to set calorie limit and to get a detailed amount of intake of carbohydrates,protiens etc..
 ## Contributers
-1. [Manohar Kota](https://github.com/19782003)
-2. [Roopa Navya](https://github.com/roopa-navya07)
+* [Manohar Kota](https://github.com/19782003)
+* [Roopa Navya](https://github.com/roopa-navya07)
 ## Credits
-1. [CodewithHarry](https://www.youtube.com/channel/UCeVMnSShP_Iviwkknt83cww)
-2. [Aneesh Bhattacharya](https://github.com/aneeshbhattacharya/Teaching-Assistant-2021)
-3. Ankit Sharma
-4. Alluri L S V Siddhartha Varma
+* [CodewithHarry](https://www.youtube.com/channel/UCeVMnSShP_Iviwkknt83cww)
+* [Aneesh Bhattacharya](https://github.com/aneeshbhattacharya/Teaching-Assistant-2021)
+* Ankit Sharma
+* Alluri L S V Siddhartha Varma
 
 
 
