@@ -92,7 +92,20 @@ The main objective of the website is to check and display the calorie consumptio
 ```bash
 python manage.py runserver
 ``` 
+## 6) we introduced a new feature BMR ratio so user can modify food consumption and we also gave an idea about BMR
 
+
+
+
+![image](https://user-images.githubusercontent.com/86138150/123502111-4efb4e00-d667-11eb-89c5-715fdf18584b.png)
+![image](https://user-images.githubusercontent.com/86138150/123502118-5de20080-d667-11eb-941a-440464a92326.png)
+
+
+
+
+
+
+## This  calorie counter is the best website for a user to set calorie limit and to get a detailed amount of intake of carbohydrates,protiens etc
 
 
 
