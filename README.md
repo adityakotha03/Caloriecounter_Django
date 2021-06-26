@@ -8,7 +8,7 @@ The main objective of the website is to check and display the calorie consumptio
 - [x] Basic concepts of Python
 - [x] HTML
 - [x] CSS
-- [x] Bootstrap
+- [x] Bootstrap ![image](https://user-images.githubusercontent.com/86183042/123501790-fdea5a80-d664-11eb-89cf-07c2c4d9b6ac.jpg)
 - [x] Django framework
 
 ## WEB PAGE:
