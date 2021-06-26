@@ -92,7 +92,7 @@ The main objective of the website is to check and display the calorie consumptio
 ```bash
 python manage.py runserver
 ``` 
-## 6) we introduced a new feature BMR ratio so user can modify food consumption and we also gave an idea about BMR
+## 6) we introduced a new feature BMR ratio so user can modify food consumption and we also gave a brief idea about BMR ratio
 
 
 
