@@ -106,7 +106,9 @@ python manage.py runserver
 
 
 ## This  calorie counter is the best website for a user to set calorie limit and to get a detailed amount of intake of carbohydrates,protiens etc..
-
+## Contributers
+1. Manohar Kota
+2. [Roopa Navya](https://github.com/roopa-navya07) 
 
 
 
