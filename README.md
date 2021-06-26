@@ -3,7 +3,7 @@ This is a simple website to track consumption of calories eaten by the user thro
 ## An Introduction
 The main objective of the website is to check and display the calorie consumption of the user through out the day.To lose weight, you need to eat fewer calories than you burn.Any excess calories you eat will be stored as fat, and consistently eating more than you burn will cause weight gain over time.In theory, this sound simple.However, managing your food intake in the modern food environment can be tricky.Calorie counting is one way to tackle this problem, and is commonly used for weight loss. Also the website suggests a health calorie intake based on various factors (BMR).This website also provides a pie chart to distinguh the amount of protiens and carbohydrates consumed by the user.
 ## WEB PAGE:
-1)HOME PAGE:This is our index page it gives about a basic idea about why should we count calories and some foood facts
+### 1)HOME PAGE:This is our index page it gives about a basic idea about why should we count calories and some foood facts
 
 
 
@@ -19,7 +19,7 @@ The main objective of the website is to check and display the calorie consumptio
 
 
 
-2) These are our sign upand sign in page:
+### 2) These are our sign upand sign in page:
 
 
 
@@ -36,7 +36,7 @@ The main objective of the website is to check and display the calorie consumptio
 
 
 
-3) After login we get our calorie counter by setting up target calories and consumed calories by user:
+### 3) After login we get our calorie counter by setting up target calories and consumed calories by user:
 
 
 
@@ -51,7 +51,7 @@ The main objective of the website is to check and display the calorie consumptio
 
 
 
-4) we can see a clear statistics of food consumed by user in pie chart and also the indication that he exceeded limit or not
+### 4) we can see a clear statistics of food consumed by user in pie chart and also the indication that he exceeded limit or not
 
 
 
@@ -66,7 +66,7 @@ The main objective of the website is to check and display the calorie consumptio
 
 
 
-5) we also intoduced seperate pie charts for carbohydrates and protiens so user can get a detailed idea about his/her food intake
+### 5) we also intoduced seperate pie charts for carbohydrates and protiens so user can get a detailed idea about his/her food intake
 
 
 
