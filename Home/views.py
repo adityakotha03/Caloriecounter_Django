@@ -1,62 +1,46 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
+#importing UserDetails from .models
 from .models import UserDetails
 from django.views.generic import View
- 
-#importing get_template from loader
-from django.template.loader import get_template
- 
-#import render_to_pdf from util.py 
-from .utils import render_to_pdf 
 
+#rendering home page
 def index(request):
     return render(request,"index.html")
-
+#renderong balenced diet page
 def diet(request):
     return render(request,"diet.html")
 
 def login(request):
+#defined global variables to give them a value of 0 if they are not given by user they will be 0 by default
     totalCals=totalProt=totalCals1=totalProt1=totalCals2=totalProt2=totalCals3=0
-
     if(request.method == 'POST'):
-
+#if some one is logging in first time
        if 'login' in request.POST:
-
+#making a varibales and getting them from database
             email = request.POST.get("email")
             password = request.POST.get("password")
+#getting the email of user if exists from data base
             object = UserDetails.objects.get(email=email)
-
+#if password exists we retrive it from data base
             if(password == object.password):
                 return render(request,"login.html", {'login':"login"})
-
+#if it doesn't exist we render the login page back again
             else:
                 return render(request,"login.html")
+#if the user is logged in we render the login.html again
        else:
-           carb = request.POST.get('carb')
-           grams = request.POST.get('grams')
-           prot = request.POST.get('prot')
-           grams1 = request.POST.get('grams1')
-           carblun = request.POST.get('carblun')
-           grams2 = request.POST.get('grams2')
-           protlun = request.POST.get('protlun')
-           grams3 = request.POST.get('grams3')
-           carbdin= request.POST.get('carbdin')
-           grams4 = request.POST.get('grams4')
-           protdin = request.POST.get('protdin')
-           grams5 = request.POST.get('grams5')
-           carbsnack= request.POST.get('carbsnack')
-           grams6 = request.POST.get('grams6')
-           tarcarb = request.POST.get('tarcarb')
-           tarprot = request.POST.get('tarprot')
-
-
+           lists = ["carb","grams","prot","grams1","carblun","grams2","protlun","grams3","carbdin","grams4","protdin","grams5","carbsnack","grams6","tarcarb","tarprot"]            
+           for i in lists:
+               globals()[i]=request.POST.get(i)
+#the string from the lists is stored in a dictionary and a value is added to it when try to retrive the value of string it retuns the value stored in key
            carbohydrate = {"bread":49, "roti":264 , "idli": 360 , "oats": 68}
            protiene = {"egg":13,"sausages":27,"milk":3.4,"yogurt": 10}
-           carbohydrate1 = {"rice":28,"chapati":264,"ptarprotumpkin":7,"curd":10}
+           carbohydrate1 = {"rice":28,"chapati":264,"pumpkin":70,"curd":10}
            protiene1 = {"sprouts":3.4,"boiledegg":13,"paneer":20,"yougurt":10}
-           carbohydrate2 = {"rice":28,"chapati":264,"pumpkin":7,"curd":10}
+           carbohydrate2 = {"rice":28,"chapati":264,"pumpkin":70,"curd":10}
            protiene2 = {"sprouts":3.4,"boiledegg":13,"paneer":20,"yougurt":10}
            carbohydrate3 = {"coke":40,"lays":547,"maggi":97,"orange":47}
-
+#if carb exists in carbohydrate the if condition works 
            if carbohydrate.get(carb):
                totalCals = int(grams)/100 *carbohydrate.get(carb)
            if protiene.get(prot):
@@ -71,39 +55,31 @@ def login(request):
                totalProt2 = int(grams5)/100 *protiene2.get(protdin)
            if carbohydrate3.get(carbsnack):
                totalCals3 = int(grams6)/100 *carbohydrate3.get(carbsnack)
-
-              
-           context = {}
-           context["calories"] = totalCals
-           context["protiens"] = totalProt
-           context["calorieslunch"] = totalCals1
-           context["protienslunch"] = totalProt1
-           context["caloriesdinner"] = totalCals2
-           context["protiensdinner"] = totalProt2
-           context["carloriessnack"] = totalCals3
-           context["totalcarbs"] = totalCals+totalCals1+totalCals2+totalCals3
-           context["totalprotiens"] = totalProt+totalProt1+totalProt2
-
-           
-           if tarcarb==None:
-               context["usercarb"] = "Not Given"
-           elif tarcarb!= None and int(tarcarb)<totalCals+totalCals1+totalCals2+totalCals3:
-               context["usercarb"] = "Exceeded"
-           elif tarcarb!= None and int(tarcarb)>totalCals+totalCals1+totalCals2+totalCals3:
-               context["usercarb"] = "Not Exceeded"
-           if tarprot==None:
-               context["userprot"] = "Not Given"
-           elif tarprot!= None and int(tarprot)<totalProt+totalProt1+totalProt2:
-               context["userprot"] = "Exceeded"
-           elif tarprot!= None and int(tarprot)>totalProt+totalProt1+totalProt2:
-               context["userprot"] = "Not Exceeded"
+#passing the context         
+           context = { "calories":totalCals,"protiens":totalProt,"calorieslunch":totalCals1,"protienslunch":totalProt1,"caloriesdinner":totalCals2,
+           "protiensdinner":totalProt2,"carloriessnack":totalCals3,"totalcarbs":totalCals+totalCals1+totalCals2+totalCals3,"totalprotiens":totalProt+totalProt1+totalProt2}
+#handiling the errors
+           try:
+               if tarcarb!=None and int(tarcarb)<totalCals+totalCals1+totalCals2+totalCals3:
+                   context["usercarb"] = "Exceeded"
+               if tarcarb!=None and int(tarcarb)>totalCals+totalCals1+totalCals2+totalCals3:
+                   context["usercarb"] = "Not Exceeded"
+           except:
+               return HttpResponse("Entre the target value for Carbohydrates")
+           try:
+               if tarprot!=None and int(tarprot)<totalProt+totalProt1+totalProt2:
+                   context["userprot"] = "Exceeded"
+               if tarprot!=None and int(tarprot)>totalProt+totalProt1+totalProt2:
+                   context["userprot"] = "Not Exceeded"
+           except:
+               return HttpResponse("Entre the traget value for Protiens")
  
            return render(request,"result.html",context)
 
     else:
         return render(request,"login.html")
 
-
+#signup page
 def signup(request):
 
     if(request.method == 'POST'):
@@ -111,17 +87,27 @@ def signup(request):
            password = request.POST.get("password1")
            passwordverif = request.POST.get("passwordverif")
            UserDetails.objects.create(email=email,password=password)
-           return render(request,"login.html")
+           return redirect("login")
 
     else:
         return render(request,"signup.html")
 
-class GeneratePdf(View):
-     def get(self, request, *args, **kwargs):
-        
-        #getting the template
-        pdf = render_to_pdf('result.html')
-         
-         #rendering the template
-        return HttpResponse(pdf, content_type='application/pdf')
-        #End
+#defininig the bmr page
+def bmr(request):
+    Bmr=0
+    if(request.method == 'POST'):
+        lists=["age","gender","height","weight"]
+        for i in lists:
+            globals()[i]=request.POST.get(i)
+        context={}
+        if gender=="male":
+            Bmr=10*int(weight)+6.25*int(height)-5*int(age)+5
+            context["result"]=Bmr
+        if gender=="female":
+            Bmr=10*int(weight)+6.25*int(height)-5*int(age)-161
+            context["result"]=Bmr
+#passing the context depending on choosen option to new.html
+        return render(request,"new.html",context)
+    else:
+        return render(request,"bmr.html")
+
