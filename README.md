@@ -75,7 +75,7 @@ The main objective of the website is to check and display the calorie consumptio
 
 
 
-### 5) we also intoduced seperate pie charts for carbohydrates and protiens so user can get a detailed idea about his/her food intake
+### 5) we also intoduced seperate pie charts for carbohydrates and protiens so user can get a detailed idea about his/her food intake in respective intervals
 
 
 
