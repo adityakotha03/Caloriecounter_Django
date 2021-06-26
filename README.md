@@ -89,3 +89,9 @@ The main objective of the website is to check and display the calorie consumptio
 
 
 
+## 6)
+
+
+
+
+
