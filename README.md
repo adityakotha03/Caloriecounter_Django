@@ -83,7 +83,7 @@ The main objective of the website is to check and display the calorie consumptio
 
 
 
-![image](https://user-images.githubusercontent.com/86138150/123500251-5cf6a200-d65a-11eb-80c6-c46d08a792fd.png)
+![image](https://user-images.githubusercontent.com/86183042/123501377-1016c980-d662-11eb-964e-806a7ee1b4e6.png)
 
 
 
