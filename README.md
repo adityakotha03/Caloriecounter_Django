@@ -5,11 +5,11 @@ The main objective of the website is to check and display the calorie consumptio
 
 
 ## Project Prerequisites
-1. Basic concepts of Python
-2. HTML
-3. CSS
-4. Bootstrap
-5. Django framework
+- [x] Basic concepts of Python
+- [x] HTML
+- [x] CSS
+- [x] Bootstrap
+- [x] Django framework
 
 ## WEB PAGE:
 ### 1) HOME PAGE : This is our index page it gives about a basic idea about why should we count calories and some foood facts
