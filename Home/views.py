@@ -6,7 +6,7 @@ from django.views.generic import View
 #rendering home page
 def index(request):
     return render(request,"index.html")
-#renderong balenced diet page
+#rendering balenced diet page
 def diet(request):
     return render(request,"diet.html")
 
